@@ -22,7 +22,13 @@ class MainViewController: UIViewController {
     // vars
     var presenter: MainPresenterProtocol?
     
-    var foodList = [AllFood]()
+    var foodList = [AllFood]() {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+        }
+    }
     
     //IBOutlets
     @IBOutlet weak var collectionView: UICollectionView! {
@@ -31,6 +37,7 @@ class MainViewController: UIViewController {
             self.collectionView.dataSource = self
             let nibName = UINib(nibName: String(describing: FoodCell.self), bundle: nil)
             collectionView.register(nibName, forCellWithReuseIdentifier: "FoodCell")
+            collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
             collectionView.backgroundColor = .white
         }
     }
@@ -39,6 +46,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getListOfRecipes()
+        
     }
 }
 
@@ -55,10 +63,6 @@ extension MainViewController: MainViewControllerProtocol {
     func renderUI(list: [AllFood]) {
         //Load table And display Data
         foodList = list
-        DispatchQueue.main.async { [weak self] in
-            self?.collectionView.reloadData()
-        }
-        
     }
 }
 
@@ -107,7 +111,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let cellWidth = FoodCellConstants().cellWidth()
-        return CGSize(width: CGFloat(cellWidth), height: CGFloat(cellWidth))
+        return CGSize(width: CGFloat(cellWidth), height: CGFloat(cellWidth + 20))
 
     }
     
@@ -120,6 +124,23 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: FoodCellConstants().sectionInset, bottom: 0, right: FoodCellConstants().sectionInset)
+        return UIEdgeInsets(top: 10, left: FoodCellConstants().sectionInset, bottom: 0, right: FoodCellConstants().sectionInset)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+          
+        let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as? SectionHeader ?? SectionHeader()
+        
+        let items = foodList[indexPath.section]
+        let header = items.categoryName
+        sectionHeader.label.text = header
+        
+        return sectionHeader
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 20)
     }
 }
+

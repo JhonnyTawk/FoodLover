@@ -37,12 +37,23 @@ class FoodCell: UICollectionViewCell {
         }
     }
     
+    @IBOutlet weak var parentView: UIView! {
+        didSet {
+            parentView.layer.borderColor = UIColor.gray.cgColor
+            parentView.layer.borderWidth = 1
+            parentView.layer.cornerRadius = 5
+        }
+    }
+    
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
     
     func configure(modal:FoodCellModal) {
-        foodImage.kf.setImage(with: URL(string: modal.thumbnail))
+        let image = modal.thumbnail.replacingOccurrences(of: " ", with: "%20")
+        let url = URL(string: image)
+        self.foodImage.kf.setImage(with: url)
+
         foodTitle.text = modal.title
         foodDuration.text = modal.duration
         foodDescription.text = modal.desc

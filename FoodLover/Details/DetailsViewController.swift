@@ -10,4 +10,10 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    var modal: DetailsModal?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
 }
