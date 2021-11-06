@@ -41,19 +41,17 @@ extension DetailsDataSource: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if celltype == .ingredients {
-//            return 1
-//        }else {
-            return details.steps.count
-//        }
+        switch celltype[section] {
+        case .ingredients: return 1
+        case .steps: return details.steps.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        switch celltype {
-//        case .ingredients: return createStepsCell(tableView: tableView, indexPath: indexPath)
-//        case .steps: return createStepsCell(tableView: tableView, indexPath: indexPath)
-//        }
-        return createStepsCell(tableView: tableView, indexPath: indexPath)
+        switch celltype[indexPath.section] {
+        case .ingredients: return createIngredientCell(tableView: tableView, indexPath: indexPath)
+        case .steps: return createStepsCell(tableView: tableView, indexPath: indexPath)
+        }
     }
 }
 
@@ -70,6 +68,20 @@ extension DetailsDataSource {
         
         let item = details.steps
         cell.configureUI(title: "Step \(indexPath.row + 1)", desc: item[indexPath.row])
+        return cell
+    }
+    
+    func createIngredientCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+
+        let defaultCell = tableView.dequeueReusableCell(withIdentifier: DetailsCellType.ingredients.cellIdentifier,
+                                                        for: indexPath)
+        
+        guard let cell = defaultCell as? DetailsIngredientCell else {
+            return defaultCell
+        }
+        
+        let item = details.ingredients
+        cell.configureUI(title: "Ingredients", desc: item)
         return cell
     }
     

@@ -40,7 +40,7 @@ class DetailsViewController: UIViewController {
             return
         }
 
-        dataSource = DetailsDataSource(modal: modal,cellTypes: [.steps])
+        dataSource = DetailsDataSource(modal: modal,cellTypes: [.ingredients, .steps])
         
         tableView.dataSource = dataSource
 //        tableView.delegate = dataSource
