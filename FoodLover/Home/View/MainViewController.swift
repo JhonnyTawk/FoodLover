@@ -11,9 +11,6 @@ import UIKit
 protocol MainViewControllerProtocol {
     
     var presenter: MainPresenterProtocol? { get set }
-    
-    func hideLoading()
-    func showLoading()
     func renderUI(list: [AllFood])
 }
 
@@ -31,6 +28,7 @@ class MainViewController: UIViewController {
     }
     
     //IBOutlets
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             self.collectionView.delegate = self
@@ -45,21 +43,13 @@ class MainViewController: UIViewController {
     //Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text = "Food Lovers"
         presenter?.getListOfRecipes()
         
     }
 }
 
 extension MainViewController: MainViewControllerProtocol {
-
-    func hideLoading() {
-        //later
-    }
-    
-    func showLoading() {
-        //later
-    }
-    
     func renderUI(list: [AllFood]) {
         //Load table And display Data
         foodList = list

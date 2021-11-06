@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="FoodLover" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="4V4-u1-YRr" id="1uk-FN-4jP"/>
+                <outlet property="titleLabel" destination="s0u-7C-IGN" id="bZX-hK-ygP"/>
                 <outlet property="view" destination="uZ8-o0-z3e" id="B9b-d3-Ei9"/>
             </connections>
         </placeholder>
@@ -20,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4V4-u1-YRr">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E04-xy-q8F">
                         <size key="itemSize" width="128" height="128"/>
@@ -29,21 +30,44 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GJ-js-C1O">
+                    <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0u-7C-IGN">
+                            <rect key="frame" x="207" y="40" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstItem="s0u-7C-IGN" firstAttribute="centerY" secondItem="1GJ-js-C1O" secondAttribute="centerY" id="cR6-ST-cwM"/>
+                        <constraint firstItem="s0u-7C-IGN" firstAttribute="centerX" secondItem="1GJ-js-C1O" secondAttribute="centerX" id="eyE-ij-rgE"/>
+                        <constraint firstAttribute="height" constant="80" id="qBU-zp-Pim"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="0NJ-GT-0fQ"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="1GJ-js-C1O" firstAttribute="top" secondItem="0NJ-GT-0fQ" secondAttribute="top" id="6Xw-FM-1YT"/>
+                <constraint firstItem="1GJ-js-C1O" firstAttribute="leading" secondItem="0NJ-GT-0fQ" secondAttribute="leading" id="CEW-Vl-8pp"/>
                 <constraint firstItem="0NJ-GT-0fQ" firstAttribute="trailing" secondItem="4V4-u1-YRr" secondAttribute="trailing" id="EPL-Fi-4df"/>
-                <constraint firstItem="4V4-u1-YRr" firstAttribute="top" secondItem="0NJ-GT-0fQ" secondAttribute="top" id="FsE-al-5bF"/>
                 <constraint firstItem="4V4-u1-YRr" firstAttribute="leading" secondItem="0NJ-GT-0fQ" secondAttribute="leading" id="N2D-Zi-z22"/>
                 <constraint firstItem="0NJ-GT-0fQ" firstAttribute="bottom" secondItem="4V4-u1-YRr" secondAttribute="bottom" id="OlG-Ej-66b"/>
+                <constraint firstItem="4V4-u1-YRr" firstAttribute="top" secondItem="1GJ-js-C1O" secondAttribute="bottom" id="WhR-9V-tSe"/>
+                <constraint firstItem="1GJ-js-C1O" firstAttribute="trailing" secondItem="0NJ-GT-0fQ" secondAttribute="trailing" id="vYq-Kg-L9N"/>
             </constraints>
-            <point key="canvasLocation" x="17" y="32"/>
+            <point key="canvasLocation" x="15.942028985507248" y="31.473214285714285"/>
         </view>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
