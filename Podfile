@@ -8,7 +8,6 @@ target 'FoodLover' do
   # Pods for FoodLover
 
   pod 'Kingfisher', '~> 7.0'
-#  pod 'AlamofireImage', '~> 4.1'
-
+  pod 'Google-Mobile-Ads-SDK'
   
 end
