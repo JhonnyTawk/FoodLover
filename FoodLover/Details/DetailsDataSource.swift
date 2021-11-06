@@ -60,11 +60,6 @@ extension DetailsDataSource: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate methods
-extension DetailsDataSource: UITableViewDelegate {
-  
-}
-    
 extension DetailsDataSource {
     
     func createStepsCell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
