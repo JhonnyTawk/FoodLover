@@ -38,3 +38,18 @@ struct Receipe: Codable {
     let timetoprepare, smalldescription: String
     let ingredients, steps: [String]
 }
+
+struct FoodCellModal {
+    var thumbnail: String
+    var title: String
+    var desc: String
+    var duration: String
+}
+
+
+struct DetailsModal {
+    var thumbnail: String
+    var title: String
+    var steps: [String]
+    var ingredients: [String]
+}

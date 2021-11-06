@@ -6,19 +6,26 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainRouterProtocol {
+    
+    var controller: MainViewController? { get set }
+    
     static func createMainModule() -> MainViewController
+    func navigateToDetails(modal: DetailsModal)
 }
 
 class MainRouter: MainRouterProtocol {
+    
+     var controller: MainViewController?
     
     static func createMainModule() -> MainViewController {
         let instance: MainViewController = MainViewController()
         var presenter: MainPresenterProtocol & MainInteractorOutputProtocol = MainPresenter()
         var interactor: MainInteractorInputProtocol = MainInteractor()
         let dataManager: dataManagerProtocol = DataManager()
-        let router: MainRouterProtocol = MainRouter()
+        var router: MainRouterProtocol = MainRouter()
         
         instance.presenter = presenter
         presenter.view = instance
@@ -26,7 +33,14 @@ class MainRouter: MainRouterProtocol {
         presenter.router = router
         interactor.presenterOutput = presenter
         interactor.dataManager = dataManager
+        router.controller = instance
         return instance
+        
+    }
+    
+    func navigateToDetails(modal: DetailsModal) {
+       let instance = DetailsViewController()
+        controller?.navigationController?.pushViewController(instance, animated: true)
         
     }
     

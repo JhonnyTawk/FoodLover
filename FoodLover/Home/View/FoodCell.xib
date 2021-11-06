@@ -25,6 +25,7 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nHf-4V-5eQ">
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="102.5"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQE-py-hdV">
                                         <rect key="frame" x="0.0" y="102.5" width="298" height="102.5"/>
@@ -51,7 +52,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="Jov-1n-HCu" firstAttribute="top" secondItem="wQE-py-hdV" secondAttribute="top" constant="10" id="AgI-YT-ZPZ"/>
                                             <constraint firstAttribute="trailing" secondItem="Jov-1n-HCu" secondAttribute="trailing" constant="10" id="BGs-Hw-f8M"/>
@@ -67,7 +68,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="S66-RJ-Maw" firstAttribute="leading" secondItem="iwb-ls-9dZ" secondAttribute="leading" id="Lae-dW-HvU"/>
                             <constraint firstAttribute="trailing" secondItem="S66-RJ-Maw" secondAttribute="trailing" id="PPX-Ft-0MJ"/>
@@ -94,8 +95,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -13,6 +13,7 @@ protocol MainPresenterProtocol {
     var router: MainRouterProtocol? { get set}
     
     func getListOfRecipes()
+    func navigateToDetails(detailsModal: DetailsModal)
 }
 
 class MainPresenter: MainPresenterProtocol {
@@ -24,7 +25,11 @@ class MainPresenter: MainPresenterProtocol {
     func getListOfRecipes() {
         interactor?.fetchListOfReceips()
     }
- 
+    
+    func navigateToDetails(detailsModal: DetailsModal) {
+        router?.navigateToDetails(modal: detailsModal)
+        
+    }
 }
 
 extension MainPresenter: MainInteractorOutputProtocol {

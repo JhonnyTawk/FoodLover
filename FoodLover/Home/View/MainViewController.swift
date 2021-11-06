@@ -89,6 +89,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.configure(modal: modal)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let allFoods = foodList[indexPath.section]
+        let item = allFoods.receipes[indexPath.item]
+        let modal = DetailsModal(thumbnail: item.imageurl,
+                                 title: item.name,
+                                 steps: item.steps,
+                                 ingredients: item.ingredients)
+        presenter?.navigateToDetails(detailsModal: modal)
+    }
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {

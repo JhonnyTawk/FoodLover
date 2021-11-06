@@ -9,13 +9,6 @@ import Foundation
 import UIKit
 import Kingfisher
 
-struct FoodCellModal {
-    var thumbnail: String
-    var title: String
-    var desc: String
-    var duration: String
-}
-
 class FoodCell: UICollectionViewCell {
     
     @IBOutlet weak var foodImage: UIImageView! {
@@ -42,6 +35,10 @@ class FoodCell: UICollectionViewCell {
             foodDescription.numberOfLines = 0
             foodDescription.font = UIFont.systemFont(ofSize: 12)
         }
+    }
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
     }
     
     func configure(modal:FoodCellModal) {

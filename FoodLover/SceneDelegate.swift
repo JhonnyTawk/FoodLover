@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         
         let instance = MainRouter.createMainModule()
-        self.window?.rootViewController = instance
+        let nav = UINavigationController(rootViewController: instance)
+        self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         
     }
