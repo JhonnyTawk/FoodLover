@@ -27,6 +27,9 @@
 		B79BAB3F2736B4FD00C3FAD3 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB3E2736B4FD00C3FAD3 /* DetailsViewController.swift */; };
 		B79BAB412736B51000C3FAD3 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79BAB402736B51000C3FAD3 /* DetailsViewController.xib */; };
 		B79BAB432736B9FA00C3FAD3 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB422736B9FA00C3FAD3 /* SectionHeader.swift */; };
+		B79BAB452736C0CD00C3FAD3 /* DetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB442736C0CD00C3FAD3 /* DetailsDataSource.swift */; };
+		B79BAB482736C2CC00C3FAD3 /* DetailsStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB472736C2CC00C3FAD3 /* DetailsStepsCell.swift */; };
+		B79BAB4A2736C43C00C3FAD3 /* DetailsStepsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79BAB492736C43C00C3FAD3 /* DetailsStepsCell.xib */; };
 		D8CBD8960A4596E43E7197F1 /* Pods_FoodLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C93ED9B7C0E6BC82BDC87E5 /* Pods_FoodLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,9 @@
 		B79BAB3E2736B4FD00C3FAD3 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		B79BAB402736B51000C3FAD3 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		B79BAB422736B9FA00C3FAD3 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		B79BAB442736C0CD00C3FAD3 /* DetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataSource.swift; sourceTree = "<group>"; };
+		B79BAB472736C2CC00C3FAD3 /* DetailsStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsStepsCell.swift; sourceTree = "<group>"; };
+		B79BAB492736C43C00C3FAD3 /* DetailsStepsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsStepsCell.xib; sourceTree = "<group>"; };
 		CE2DA90C8E8497AB1C6F4BE4 /* Pods-FoodLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLover.release.xcconfig"; path = "Target Support Files/Pods-FoodLover/Pods-FoodLover.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,10 +157,21 @@
 		B79BAB3D2736B4F000C3FAD3 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				B79BAB462736C2BD00C3FAD3 /* Cell */,
 				B79BAB3E2736B4FD00C3FAD3 /* DetailsViewController.swift */,
 				B79BAB402736B51000C3FAD3 /* DetailsViewController.xib */,
+				B79BAB442736C0CD00C3FAD3 /* DetailsDataSource.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		B79BAB462736C2BD00C3FAD3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B79BAB472736C2CC00C3FAD3 /* DetailsStepsCell.swift */,
+				B79BAB492736C43C00C3FAD3 /* DetailsStepsCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B79BAB4A2736C43C00C3FAD3 /* DetailsStepsCell.xib in Resources */,
 				B79BAB1A2736962D00C3FAD3 /* LaunchScreen.storyboard in Resources */,
 				B79BAB3A2736A8DE00C3FAD3 /* FoodCell.xib in Resources */,
 				B79BAB3C2736AD6300C3FAD3 /* MainViewController.xib in Resources */,
@@ -277,6 +295,7 @@
 			files = (
 				B79BAB122736962900C3FAD3 /* ViewController.swift in Sources */,
 				B79BAB362736A76200C3FAD3 /* FoodCell.swift in Sources */,
+				B79BAB482736C2CC00C3FAD3 /* DetailsStepsCell.swift in Sources */,
 				B79BAB252736987500C3FAD3 /* DataManager.swift in Sources */,
 				B79BAB0E2736962900C3FAD3 /* AppDelegate.swift in Sources */,
 				B79BAB312736A06900C3FAD3 /* MainInteractor.swift in Sources */,
@@ -284,6 +303,7 @@
 				B79BAB2F2736A05400C3FAD3 /* MainPresenter.swift in Sources */,
 				B79BAB2C27369AFC00C3FAD3 /* Entity.swift in Sources */,
 				B79BAB2A2736996D00C3FAD3 /* Constants.swift in Sources */,
+				B79BAB452736C0CD00C3FAD3 /* DetailsDataSource.swift in Sources */,
 				B79BAB232736984100C3FAD3 /* MainViewController.swift in Sources */,
 				B79BAB432736B9FA00C3FAD3 /* SectionHeader.swift in Sources */,
 				B79BAB332736A2CB00C3FAD3 /* MainRouter.swift in Sources */,

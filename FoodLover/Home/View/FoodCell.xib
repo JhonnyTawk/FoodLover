@@ -90,7 +90,7 @@
             <connections>
                 <outlet property="foodDescription" destination="gc2-K6-ZgR" id="iCq-WN-Dy9"/>
                 <outlet property="foodDuration" destination="sJH-Zb-ION" id="1gn-V3-z0r"/>
-                <outlet property="foodImage" destination="nHf-4V-5eQ" id="4zJ-Hp-W7k"/>
+                <outlet property="foodImage" destination="nHf-4V-5eQ" id="Bnj-kt-ogY"/>
                 <outlet property="foodTitle" destination="Jov-1n-HCu" id="4nX-da-v3y"/>
                 <outlet property="parentView" destination="iwb-ls-9dZ" id="ODl-pj-oCO"/>
             </connections>

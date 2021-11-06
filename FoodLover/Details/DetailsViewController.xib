@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="FoodLover" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="vx3-sP-KQH" id="X4d-gW-txK"/>
                 <outlet property="view" destination="lfB-za-NvY" id="JL1-xm-IXW"/>
             </connections>
         </placeholder>
@@ -17,8 +18,20 @@
         <view contentMode="scaleToFill" id="lfB-za-NvY">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vx3-sP-KQH">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="TSz-kQ-zO5"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vx3-sP-KQH" firstAttribute="leading" secondItem="TSz-kQ-zO5" secondAttribute="leading" id="Acb-DE-QGW"/>
+                <constraint firstItem="TSz-kQ-zO5" firstAttribute="bottom" secondItem="vx3-sP-KQH" secondAttribute="bottom" id="CSI-VY-4Y2"/>
+                <constraint firstItem="vx3-sP-KQH" firstAttribute="top" secondItem="TSz-kQ-zO5" secondAttribute="top" id="Hsw-TO-51e"/>
+                <constraint firstItem="TSz-kQ-zO5" firstAttribute="trailing" secondItem="vx3-sP-KQH" secondAttribute="trailing" id="h7c-F4-4zP"/>
+            </constraints>
             <point key="canvasLocation" x="87" y="76"/>
         </view>
     </objects>

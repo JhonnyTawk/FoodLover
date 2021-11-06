@@ -40,8 +40,7 @@ class MainRouter: MainRouterProtocol {
     
     func navigateToDetails(modal: DetailsModal) {
        let instance = DetailsViewController()
+        instance.modal = modal
         controller?.navigationController?.pushViewController(instance, animated: true)
-        
-    }
-    
+    }    
 }
