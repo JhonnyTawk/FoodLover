@@ -86,9 +86,29 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                   title: item.name,
                                   desc: item.smalldescription,
                                   duration: item.timetoprepare)
-        print(modal)
+        cell.configure(modal: modal)
         return cell
     }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellWidth = FoodCellConstants().cellWidth()
+        return CGSize(width: CGFloat(cellWidth), height: CGFloat(cellWidth))
+
+    }
     
+    func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, minimumLineSpacingForSectionAt _: Int) -> CGFloat {
+        return FoodCellConstants().spaceBetweenItems
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return FoodCellConstants().spaceBetweenItems
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: FoodCellConstants().sectionInset, bottom: 0, right: FoodCellConstants().sectionInset)
+    }
 }
