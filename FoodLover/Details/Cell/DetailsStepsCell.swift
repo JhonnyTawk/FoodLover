@@ -42,5 +42,15 @@ class DetailsStepsCell: UITableViewCell {
         descLabel2.text = desc
         descLabel2.font = UIFont.systemFont(ofSize: 12, weight: .regular)
     }
-    
 }
+
+class DetailsImageCell: UITableViewCell {
+    @IBOutlet weak var foodImage: UIImageView!
+    
+    func configureUI(thumbnail: String) {
+        let image = thumbnail.replacingOccurrences(of: " ", with: "%20")
+        let url = URL(string: image)
+        self.foodImage.kf.setImage(with: url)
+    }
+}
+

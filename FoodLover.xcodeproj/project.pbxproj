@@ -31,6 +31,7 @@
 		B79BAB482736C2CC00C3FAD3 /* DetailsStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB472736C2CC00C3FAD3 /* DetailsStepsCell.swift */; };
 		B79BAB4A2736C43C00C3FAD3 /* DetailsStepsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79BAB492736C43C00C3FAD3 /* DetailsStepsCell.xib */; };
 		B79BAB4C2736C81200C3FAD3 /* DetailsIngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79BAB4B2736C81200C3FAD3 /* DetailsIngredientCell.xib */; };
+		B79BAB4E2736CB8E00C3FAD3 /* DetailsImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79BAB4D2736CB8E00C3FAD3 /* DetailsImageCell.xib */; };
 		D8CBD8960A4596E43E7197F1 /* Pods_FoodLover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C93ED9B7C0E6BC82BDC87E5 /* Pods_FoodLover.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		B79BAB472736C2CC00C3FAD3 /* DetailsStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsStepsCell.swift; sourceTree = "<group>"; };
 		B79BAB492736C43C00C3FAD3 /* DetailsStepsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsStepsCell.xib; sourceTree = "<group>"; };
 		B79BAB4B2736C81200C3FAD3 /* DetailsIngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsIngredientCell.xib; sourceTree = "<group>"; };
+		B79BAB4D2736CB8E00C3FAD3 /* DetailsImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsImageCell.xib; sourceTree = "<group>"; };
 		CE2DA90C8E8497AB1C6F4BE4 /* Pods-FoodLover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodLover.release.xcconfig"; path = "Target Support Files/Pods-FoodLover/Pods-FoodLover.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 				B79BAB472736C2CC00C3FAD3 /* DetailsStepsCell.swift */,
 				B79BAB492736C43C00C3FAD3 /* DetailsStepsCell.xib */,
 				B79BAB4B2736C81200C3FAD3 /* DetailsIngredientCell.xib */,
+				B79BAB4D2736CB8E00C3FAD3 /* DetailsImageCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				B79BAB172736962D00C3FAD3 /* Assets.xcassets in Resources */,
 				B79BAB152736962900C3FAD3 /* Main.storyboard in Resources */,
 				B79BAB412736B51000C3FAD3 /* DetailsViewController.xib in Resources */,
+				B79BAB4E2736CB8E00C3FAD3 /* DetailsImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
