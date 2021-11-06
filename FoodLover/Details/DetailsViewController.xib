@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="FoodLover" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="vx3-sP-KQH" id="X4d-gW-txK"/>
+                <outlet property="titleLabel" destination="L1x-lC-adh" id="GxN-yb-dOh"/>
                 <outlet property="view" destination="lfB-za-NvY" id="JL1-xm-IXW"/>
             </connections>
         </placeholder>
@@ -19,25 +20,64 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCH-2g-vck">
+                    <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1x-lC-adh">
+                            <rect key="frame" x="80" y="40" width="314" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g73-uz-8H6">
+                            <rect key="frame" x="20" y="20" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="RQt-F5-8eN"/>
+                                <constraint firstAttribute="width" constant="40" id="w4V-tn-Nmn"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="icBackArrow"/>
+                            <connections>
+                                <action selector="backAction:" destination="-1" eventType="touchUpInside" id="uxH-to-o3s"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstItem="L1x-lC-adh" firstAttribute="leading" secondItem="g73-uz-8H6" secondAttribute="trailing" constant="20" id="H2K-YK-vyC"/>
+                        <constraint firstItem="g73-uz-8H6" firstAttribute="centerY" secondItem="UCH-2g-vck" secondAttribute="centerY" id="Mg3-Gp-o7d"/>
+                        <constraint firstAttribute="trailing" secondItem="L1x-lC-adh" secondAttribute="trailing" constant="20" id="Rd8-RP-0Zb"/>
+                        <constraint firstAttribute="height" constant="80" id="W6S-a5-sO1"/>
+                        <constraint firstItem="g73-uz-8H6" firstAttribute="leading" secondItem="UCH-2g-vck" secondAttribute="leading" constant="20" id="WpQ-Ni-XJq"/>
+                        <constraint firstItem="L1x-lC-adh" firstAttribute="centerY" secondItem="UCH-2g-vck" secondAttribute="centerY" id="yLn-mM-RYV"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vx3-sP-KQH">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="TSz-kQ-zO5"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="UCH-2g-vck" firstAttribute="top" secondItem="TSz-kQ-zO5" secondAttribute="top" id="Aat-Af-Cvp"/>
                 <constraint firstItem="vx3-sP-KQH" firstAttribute="leading" secondItem="TSz-kQ-zO5" secondAttribute="leading" id="Acb-DE-QGW"/>
                 <constraint firstItem="TSz-kQ-zO5" firstAttribute="bottom" secondItem="vx3-sP-KQH" secondAttribute="bottom" id="CSI-VY-4Y2"/>
-                <constraint firstItem="vx3-sP-KQH" firstAttribute="top" secondItem="TSz-kQ-zO5" secondAttribute="top" id="Hsw-TO-51e"/>
+                <constraint firstItem="vx3-sP-KQH" firstAttribute="top" secondItem="UCH-2g-vck" secondAttribute="bottom" id="E2w-mL-sUh"/>
                 <constraint firstItem="TSz-kQ-zO5" firstAttribute="trailing" secondItem="vx3-sP-KQH" secondAttribute="trailing" id="h7c-F4-4zP"/>
+                <constraint firstItem="TSz-kQ-zO5" firstAttribute="trailing" secondItem="UCH-2g-vck" secondAttribute="trailing" id="kaF-4d-aOx"/>
+                <constraint firstItem="UCH-2g-vck" firstAttribute="leading" secondItem="TSz-kQ-zO5" secondAttribute="leading" id="kmn-Ja-DDw"/>
             </constraints>
-            <point key="canvasLocation" x="87" y="76"/>
+            <point key="canvasLocation" x="86.956521739130437" y="75.669642857142847"/>
         </view>
     </objects>
     <resources>
+        <image name="icBackArrow" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -20,6 +20,8 @@ class DetailsViewController: UIViewController {
     var dataSource: DetailsDataSource?
     
     //IBOutlets
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             //Steps cell
@@ -38,25 +40,28 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = modal?.title
+        titleLabel.text = modal?.title
         navigationController?.interactivePopGestureRecognizer?.delegate = nil
         
         renderUI()
         loadAd()
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        
+      if interstitial != nil {
+          interstitial?.present(fromRootViewController: self)
+       } else {
+         print("Ad wasn't ready")
+       }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-  
-        if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
-         } else {
-           print("Ad wasn't ready")
-         }
     }
     
     func renderUI() {
@@ -95,13 +100,12 @@ extension DetailsViewController: GADFullScreenContentDelegate {
 
     /// Tells the delegate that the ad presented full screen content.
     func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-      print("Ad did present full screen content.")
+        self.navigationController?.popViewController(animated: true)
     }
 
     /// Tells the delegate that the ad dismissed full screen content.
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
       print("Ad did dismiss full screen content.")
     }
-    
 }
 
