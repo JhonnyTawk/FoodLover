@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataManager().getAllrecipes()
+//        DataManager().getAllrecipes(successCompletion: SuccessHandler, errorCompletion: ErrorHandler)
         
     }
 
