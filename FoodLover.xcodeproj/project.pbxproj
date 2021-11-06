@@ -18,6 +18,9 @@
 		B79BAB28273698D300C3FAD3 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB27273698D300C3FAD3 /* APIClient.swift */; };
 		B79BAB2A2736996D00C3FAD3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB292736996D00C3FAD3 /* Constants.swift */; };
 		B79BAB2C27369AFC00C3FAD3 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB2B27369AFC00C3FAD3 /* Entity.swift */; };
+		B79BAB2F2736A05400C3FAD3 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB2E2736A05400C3FAD3 /* MainPresenter.swift */; };
+		B79BAB312736A06900C3FAD3 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB302736A06900C3FAD3 /* MainInteractor.swift */; };
+		B79BAB332736A2CB00C3FAD3 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79BAB322736A2CB00C3FAD3 /* MainRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		B79BAB27273698D300C3FAD3 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B79BAB292736996D00C3FAD3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B79BAB2B27369AFC00C3FAD3 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		B79BAB2E2736A05400C3FAD3 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		B79BAB302736A06900C3FAD3 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		B79BAB322736A2CB00C3FAD3 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				B79BAB222736984100C3FAD3 /* MainViewController.swift */,
+				B79BAB2E2736A05400C3FAD3 /* MainPresenter.swift */,
+				B79BAB302736A06900C3FAD3 /* MainInteractor.swift */,
 				B79BAB242736987500C3FAD3 /* DataManager.swift */,
+				B79BAB322736A2CB00C3FAD3 /* MainRouter.swift */,
 				B79BAB2B27369AFC00C3FAD3 /* Entity.swift */,
 			);
 			path = Home;
@@ -164,10 +173,13 @@
 				B79BAB122736962900C3FAD3 /* ViewController.swift in Sources */,
 				B79BAB252736987500C3FAD3 /* DataManager.swift in Sources */,
 				B79BAB0E2736962900C3FAD3 /* AppDelegate.swift in Sources */,
+				B79BAB312736A06900C3FAD3 /* MainInteractor.swift in Sources */,
 				B79BAB102736962900C3FAD3 /* SceneDelegate.swift in Sources */,
+				B79BAB2F2736A05400C3FAD3 /* MainPresenter.swift in Sources */,
 				B79BAB2C27369AFC00C3FAD3 /* Entity.swift in Sources */,
 				B79BAB2A2736996D00C3FAD3 /* Constants.swift in Sources */,
 				B79BAB232736984100C3FAD3 /* MainViewController.swift in Sources */,
+				B79BAB332736A2CB00C3FAD3 /* MainRouter.swift in Sources */,
 				B79BAB28273698D300C3FAD3 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

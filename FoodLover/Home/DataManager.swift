@@ -10,7 +10,7 @@ import Foundation
 typealias SuccessHandler = (([AllFood]) -> Void)
 typealias ErrorHandler = ((APIError) -> Void)
 
-protocol dataManagerDelegate {
+protocol dataManagerProtocol {
     func getAllrecipes(successCompletion: @escaping SuccessHandler, errorCompletion: @escaping ErrorHandler)
 }
 
@@ -19,7 +19,7 @@ enum APIError: Error {
     case serializeError
 }
 
-class DataManager: dataManagerDelegate {
+class DataManager: dataManagerProtocol {
 
     func getAllrecipes(successCompletion: @escaping SuccessHandler, errorCompletion: @escaping ErrorHandler) {
         let modifiers = Entity.listRecipes.build()
