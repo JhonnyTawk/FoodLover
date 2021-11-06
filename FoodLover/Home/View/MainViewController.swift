@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
     // vars
     var presenter: MainPresenterProtocol?
     
+    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet weak var bottomCollectionConstraints: NSLayoutConstraint!
     var foodList = [AllFood]() {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -56,6 +58,32 @@ class MainViewController: UIViewController {
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
+    }
+    
+    @IBAction func removeAd(_ sender: Any) {
+        showAlert()
+    }
+    func hideAds() {
+        //Remove Banner
+        bannerView.removeFromSuperview()
+        //Remove Button
+        removeButton.removeFromSuperview()
+        //Adjust Constraint
+        bottomCollectionConstraints.constant = 0
+        
+    }
+    
+    func showAlert() {
+        
+        let alert = UIAlertController(title: "Remove Ads", message: "pay 2.99$ to remove the ads", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] action in
+            self?.hideAds()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
