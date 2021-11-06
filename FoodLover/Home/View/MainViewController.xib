@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="FoodLover" customModuleProvider="target">
             <connections>
+                <outlet property="bannerView" destination="dRj-NA-E3c" id="rcy-6Z-f4K"/>
                 <outlet property="collectionView" destination="4V4-u1-YRr" id="1uk-FN-4jP"/>
                 <outlet property="titleLabel" destination="s0u-7C-IGN" id="bZX-hK-ygP"/>
                 <outlet property="view" destination="uZ8-o0-z3e" id="B9b-d3-Ei9"/>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4V4-u1-YRr">
-                    <rect key="frame" x="0.0" y="124" width="414" height="738"/>
+                    <rect key="frame" x="0.0" y="124" width="414" height="688"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E04-xy-q8F">
                         <size key="itemSize" width="128" height="128"/>
@@ -47,6 +48,13 @@
                         <constraint firstAttribute="height" constant="80" id="qBU-zp-Pim"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dRj-NA-E3c" customClass="GADBannerView">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cac-w9-BD4"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="0NJ-GT-0fQ"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -54,9 +62,12 @@
                 <constraint firstItem="1GJ-js-C1O" firstAttribute="top" secondItem="0NJ-GT-0fQ" secondAttribute="top" id="6Xw-FM-1YT"/>
                 <constraint firstItem="1GJ-js-C1O" firstAttribute="leading" secondItem="0NJ-GT-0fQ" secondAttribute="leading" id="CEW-Vl-8pp"/>
                 <constraint firstItem="0NJ-GT-0fQ" firstAttribute="trailing" secondItem="4V4-u1-YRr" secondAttribute="trailing" id="EPL-Fi-4df"/>
+                <constraint firstItem="dRj-NA-E3c" firstAttribute="leading" secondItem="0NJ-GT-0fQ" secondAttribute="leading" id="IwL-Id-cfA"/>
+                <constraint firstItem="0NJ-GT-0fQ" firstAttribute="trailing" secondItem="dRj-NA-E3c" secondAttribute="trailing" id="M6g-gE-gro"/>
                 <constraint firstItem="4V4-u1-YRr" firstAttribute="leading" secondItem="0NJ-GT-0fQ" secondAttribute="leading" id="N2D-Zi-z22"/>
-                <constraint firstItem="0NJ-GT-0fQ" firstAttribute="bottom" secondItem="4V4-u1-YRr" secondAttribute="bottom" id="OlG-Ej-66b"/>
+                <constraint firstItem="dRj-NA-E3c" firstAttribute="top" secondItem="4V4-u1-YRr" secondAttribute="bottom" id="Rjg-WF-9S5"/>
                 <constraint firstItem="4V4-u1-YRr" firstAttribute="top" secondItem="1GJ-js-C1O" secondAttribute="bottom" id="WhR-9V-tSe"/>
+                <constraint firstItem="0NJ-GT-0fQ" firstAttribute="bottom" secondItem="dRj-NA-E3c" secondAttribute="bottom" id="dbl-9F-mjr"/>
                 <constraint firstItem="1GJ-js-C1O" firstAttribute="trailing" secondItem="0NJ-GT-0fQ" secondAttribute="trailing" id="vYq-Kg-L9N"/>
             </constraints>
             <point key="canvasLocation" x="15.942028985507248" y="31.473214285714285"/>

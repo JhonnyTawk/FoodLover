@@ -10,7 +10,6 @@ import UIKit
 
 import GoogleMobileAds
 
-
 class DetailsViewController: UIViewController {
     
     private var interstitial: GADInterstitialAd?

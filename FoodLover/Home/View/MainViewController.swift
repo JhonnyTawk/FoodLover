@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import GoogleMobileAds
 
 protocol MainViewControllerProtocol {
     
@@ -29,6 +30,8 @@ class MainViewController: UIViewController {
     
     //IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
             self.collectionView.delegate = self
@@ -45,7 +48,14 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         titleLabel.text = "Food Lovers"
         presenter?.getListOfRecipes()
-        
+        setupBanner()
+    }
+    
+    func setupBanner() {
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
 }
 
@@ -134,3 +144,29 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//Ads
+extension MainViewController: GADBannerViewDelegate {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
+}
